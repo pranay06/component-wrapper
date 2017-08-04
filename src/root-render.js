@@ -1,6 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App.js';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom';
+
 const Home = () => (
   <div>
     <h2>Home</h2>
@@ -47,4 +53,5 @@ const Topic = ({ match }) => (
   </div>
 )
 
-ReactDOM.render(<App routeItems={[Home, About, Topics]}/>, document.getElementById('root'));
+
+ReactDOM.render(<App routeItems={[{"routeName": "/homes", "component": Home}, {"routeName": "/about", "component": About}, {"routeName": "/topics",  "compoenent":Topics}]}/>, document.getElementById('root'));

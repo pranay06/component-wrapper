@@ -11,7 +11,7 @@ export default class App extends React.Component {
 		console.log("Inside Render");
 		console.log(this.props);
 		// const routeItems = <Route exact  path="/" component={this.props.routeItems[0]}/>
-		const routeItems = this.props.routeItems.map((routeItem, index) => <Route exact key={index} path="/" component={routeItem}/>);
+		const routeItems = this.props.routeItems.map((routeItem, index) => <Route  key={index}  path={routeItem.routeName} component={routeItem.component}/>);
 		return (
 			<Router>
 				<div>
@@ -22,7 +22,7 @@ export default class App extends React.Component {
 				    </ul>
 
 				    <hr/>
-				   {routeItems}
+				   	{routeItems}
 				</div>
 			      
 			</Router>
